@@ -1,0 +1,514 @@
+<html>
+
+<head>
+
+  <base target="_top">
+
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>Heritage Fest Registration</title>
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <?!= include('style'); ?>
+
+</head>
+
+<body>
+
+
+  <!-- HERO -->
+  <section class="hero-section">
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+
+      <h1>Heritage Fest 2026</h1>
+
+      <p>
+        A grand spiritual and cultural celebration.
+      </p>
+
+      <a href="#categories" class="hero-btn">
+        Explore Categories
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- CATEGORY SECTION -->
+  <section class="category-section" id="categories">
+
+    <div class="section-title">
+      <h2>Event Categories</h2>
+      <div class="underline"></div>
+    </div>
+
+
+    <div class="category-grid">
+
+
+      <!-- MUSIC -->
+      <div class="category-card">
+
+        <div class="category-icon">
+          <i class="fa-solid fa-music"></i>
+        </div>
+
+        <h3>Music Competition</h3>
+
+        <p>
+          Devotional singing and instrumental events.
+        </p>
+
+        <div class="card-buttons">
+
+          <button class="guideline-btn"
+            onclick="openModal('musicModal')">
+            Guidelines
+          </button>
+
+          <button class="register-btn"
+            onclick="scrollToForm('Music Competition')">
+            Register
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- DRAMA -->
+      <div class="category-card">
+
+        <div class="category-icon">
+          <i class="fa-solid fa-masks-theater"></i>
+        </div>
+
+        <h3>Drama Competition</h3>
+
+        <p>
+          Value-based theatrical performances.
+        </p>
+
+        <div class="card-buttons">
+
+          <button class="guideline-btn"
+            onclick="openModal('dramaModal')">
+            Guidelines
+          </button>
+
+          <button class="register-btn"
+            onclick="scrollToForm('Drama Competition')">
+            Register
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- SLOKA -->
+      <div class="category-card">
+
+        <div class="category-icon">
+          <i class="fa-solid fa-book-open-reader"></i>
+        </div>
+
+        <h3>Sloka Competition</h3>
+
+        <p>
+          Bhagavad Gita and sloka recitation events.
+        </p>
+
+        <div class="card-buttons">
+
+          <button class="guideline-btn"
+            onclick="openModal('slokaModal')">
+            Guidelines
+          </button>
+
+          <button class="register-btn"
+            onclick="scrollToForm('Sloka Competition')">
+            Register
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- DRAWING -->
+      <div class="category-card">
+
+        <div class="category-icon">
+          <i class="fa-solid fa-palette"></i>
+        </div>
+
+        <h3>Drawing Competition</h3>
+
+        <p>
+          Creative art inspired by spiritual heritage.
+        </p>
+
+        <div class="card-buttons">
+
+          <button class="guideline-btn"
+            onclick="openModal('drawingModal')">
+            Guidelines
+          </button>
+
+          <button class="register-btn"
+            onclick="scrollToForm('Drawing Competition')">
+            Register
+          </button>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- REGISTRATION FORM -->
+  <section class="registration-section" id="registrationFormSection">
+
+    <div class="section-title">
+      <h2>Registration Form</h2>
+      <div class="underline"></div>
+    </div>
+
+
+    <div class="form-container">
+
+      <form id="registrationForm">
+
+        <div class="form-grid">
+
+
+          <div class="input-group">
+            <label>Student Name *</label>
+            <input type="text"
+              id="studentName"
+              required>
+          </div>
+
+
+          <div class="input-group">
+            <label>Age *</label>
+            <input type="number"
+              id="age"
+              required>
+          </div>
+
+
+          <div class="input-group">
+            <label>Gender *</label>
+
+            <select id="gender" required>
+              <option value="">Select Gender</option>
+              <option>Male</option>
+              <option>Female</option>
+            </select>
+
+          </div>
+
+
+          <div class="input-group">
+            <label>Mobile *</label>
+            <input type="text"
+              id="mobile"
+              required>
+          </div>
+
+
+          <div class="input-group">
+            <label>Email *</label>
+            <input type="email"
+              id="email"
+              required>
+          </div>
+
+
+          <div class="input-group">
+            <label>School / College *</label>
+            <input type="text"
+              id="school"
+              required>
+          </div>
+
+
+          <div class="input-group">
+            <label>City *</label>
+            <input type="text"
+              id="city"
+              required>
+          </div>
+
+
+          <div class="input-group">
+            <label>Selected Event *</label>
+            <input type="text"
+              id="eventName"
+              readonly>
+          </div>
+
+
+        </div>
+
+
+        <div class="submit-area">
+
+          <button type="submit"
+            class="submit-btn"
+            id="submitBtn">
+            Submit Registration
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- SUCCESS BOX -->
+  <div class="success-popup" id="successPopup">
+
+    <div class="success-content">
+
+      <i class="fa-solid fa-circle-check"></i>
+
+      <h2>Registration Successful</h2>
+
+      <p id="successMessage"></p>
+
+      <button onclick="closeSuccessPopup()">
+        Close
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- MUSIC MODAL -->
+  <div class="modal" id="musicModal">
+
+    <div class="modal-content">
+
+      <span class="close-btn"
+        onclick="closeModal('musicModal')">
+        &times;
+      </span>
+
+      <h2>Music Competition Guidelines</h2>
+
+      <ul>
+        <li>Only devotional songs allowed.</li>
+        <li>Time limit is 5 minutes.</li>
+        <li>Participants should report early.</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <!-- DRAMA MODAL -->
+  <div class="modal" id="dramaModal">
+
+    <div class="modal-content">
+
+      <span class="close-btn"
+        onclick="closeModal('dramaModal')">
+        &times;
+      </span>
+
+      <h2>Drama Competition Guidelines</h2>
+
+      <ul>
+        <li>Maximum 10 participants.</li>
+        <li>15 minute time limit.</li>
+        <li>Content must be value-based.</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <!-- SLOKA MODAL -->
+  <div class="modal" id="slokaModal">
+
+    <div class="modal-content">
+
+      <span class="close-btn"
+        onclick="closeModal('slokaModal')">
+        &times;
+      </span>
+
+      <h2>Sloka Competition Guidelines</h2>
+
+      <ul>
+        <li>Memorization mandatory.</li>
+        <li>Clear pronunciation required.</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <!-- DRAWING MODAL -->
+  <div class="modal" id="drawingModal">
+
+    <div class="modal-content">
+
+      <span class="close-btn"
+        onclick="closeModal('drawingModal')">
+        &times;
+      </span>
+
+      <h2>Drawing Competition Guidelines</h2>
+
+      <ul>
+        <li>Bring your own colors.</li>
+        <li>Theme announced on spot.</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Heritage Fest</p>
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+
+    function openModal(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+
+    function scrollToForm(eventName) {
+
+      document
+        .getElementById('registrationFormSection')
+        .scrollIntoView({
+          behavior: 'smooth'
+        });
+
+
+      document.getElementById('eventName').value = eventName;
+
+    }
+
+
+    function closeSuccessPopup() {
+      document.getElementById('successPopup').style.display = 'none';
+    }
+
+
+    document
+      .getElementById('registrationForm')
+      .addEventListener('submit', function(e) {
+
+        e.preventDefault();
+
+
+        const submitBtn = document.getElementById('submitBtn');
+
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'Submitting...';
+
+
+        const formData = {
+
+          studentName: document.getElementById('studentName').value,
+          age: document.getElementById('age').value,
+          gender: document.getElementById('gender').value,
+          mobile: document.getElementById('mobile').value,
+          email: document.getElementById('email').value,
+          school: document.getElementById('school').value,
+          city: document.getElementById('city').value,
+          eventName: document.getElementById('eventName').value
+
+        };
+
+
+        google.script.run
+
+          .withSuccessHandler(function(response) {
+
+            submitBtn.disabled = false;
+            submitBtn.innerText = 'Submit Registration';
+
+
+            if(response.status === 'success') {
+
+              document.getElementById('successPopup').style.display = 'flex';
+
+              document.getElementById('successMessage').innerHTML =
+                'Your Registration ID is <b>' +
+                response.registrationId +
+                '</b>';
+
+
+              document.getElementById('registrationForm').reset();
+
+            }
+
+            else {
+              alert(response.message);
+            }
+
+          })
+
+          .saveRegistration(formData);
+
+      });
+
+
+    window.onclick = function(event) {
+
+      const modals = document.querySelectorAll('.modal');
+
+      modals.forEach(modal => {
+
+        if(event.target === modal) {
+          modal.style.display = 'none';
+        }
+
+      });
+
+    }
+
+  </script>
+
+</body>
+
+</html>
+```
+

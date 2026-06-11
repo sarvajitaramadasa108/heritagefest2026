@@ -1,45 +1,106 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
 
-  <base target="_top">
+  <meta charset="UTF-8">
 
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0">
 
-  <title>Heritage Fest Registration</title>
+  <title>Heritage Fest 2026</title>
 
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
- <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+    href="style.css">
 
 </head>
 
 <body>
 
 
-  <!-- HERO -->
+  <!-- =========================
+       HERO SECTION
+  ========================== -->
+
   <section class="hero-section">
 
-    <div class="overlay"></div>
-    <div class="floating-elements">
-  <span>🦚</span>
-  <span>🎵</span>
-  <span>🪈</span>
-  <span>🪷</span>
-</div>
+    <div class="hero-overlay"></div>
+
+    <img
+      src="images/HKM logo.jpg"
+      alt="HKM Logo"
+      class="hero-logo">
+
+    <div class="floating-icons">
+
+      <div class="float-icon">
+        🎨
+      </div>
+
+      <div class="float-icon">
+        🖌️
+      </div>
+
+      <div class="float-icon">
+        👑
+      </div>
+
+      <div class="float-icon">
+        📖
+      </div>
+
+      <div class="float-icon">
+        🎤
+      </div>
+
+      <div class="float-icon">
+        🎭
+      </div>
+
+      <div class="float-icon">
+        🏺
+      </div>
+
+      <div class="float-icon">
+        ✂️
+      </div>
+
+    </div>
+
     <div class="hero-content">
 
-      <h1>Heritage Fest 2026</h1>
+      <h1>
+        Heritage Fest 2026
+      </h1>
 
-      <p>
-        A grand spiritual and cultural celebration.
+      <p class="tagline">
+        Vizag's Biggest Cultural Carnival
       </p>
 
-      <a href="#categories" class="hero-btn">
-        Explore Categories
+      <div class="event-details">
+
+        <div>
+          <i class="fa-solid fa-calendar-days"></i>
+          9 Sept 2026 - 15 Sept 2026
+        </div>
+
+        <div>
+          <i class="fa-solid fa-location-dot"></i>
+          Hare Krishna Vaikuntham Cultural Centre
+        </div>
+
+      </div>
+
+      <div id="countdown"
+        class="countdown-box">
+      </div>
+
+      <a href="#categories"
+        class="hero-btn">
+        Explore Competitions
       </a>
 
     </div>
@@ -47,40 +108,88 @@
   </section>
 
 
-  <!-- CATEGORY SECTION -->
-  <section class="category-section" id="categories">
+  <!-- =========================
+       STATS SECTION
+  ========================== -->
 
-    <div class="section-title">
-      <h2>Event Categories</h2>
-      <div class="underline"></div>
+  <section class="stats-section">
+
+    <div class="stat-card">
+      <h3>8</h3>
+      <p>Competitions</p>
     </div>
 
+    <div class="stat-card">
+      <h3>1000+</h3>
+      <p>Students Expected</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>50+</h3>
+      <p>Schools</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>7</h3>
+      <p>Days Celebration</p>
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CATEGORIES
+  ========================== -->
+
+  <section id="categories"
+    class="category-section">
+
+    <div class="section-title">
+
+      <h2>
+        Competition Categories
+      </h2>
+
+      <div class="underline"></div>
+
+    </div>
 
     <div class="category-grid">
 
 
-      <!-- MUSIC -->
+      <!-- Coloring -->
+
       <div class="category-card">
 
         <div class="category-icon">
-          <i class="fa-solid fa-music"></i>
+          🎨
         </div>
 
-        <h3>Music Competition</h3>
+        <h3>
+          Coloring
+        </h3>
 
         <p>
-          Devotional singing and instrumental events.
+          Classes 1 - 4
         </p>
 
         <div class="card-buttons">
 
-          <button class="guideline-btn"
-            onclick="openModal('musicModal')">
+          <button
+            class="guideline-btn"
+            onclick="openModal('coloringGuidelines')">
             Guidelines
           </button>
 
-          <button class="register-btn"
-            onclick="scrollToForm('Music Competition')">
+          <button
+            class="gallery-btn"
+            onclick="openGallery('coloring')">
+            Gallery
+          </button>
+
+          <button
+            class="register-btn"
+            onclick="scrollToForm('Coloring')">
             Register
           </button>
 
@@ -89,28 +198,39 @@
       </div>
 
 
-      <!-- DRAMA -->
+      <!-- Painting -->
+
       <div class="category-card">
 
         <div class="category-icon">
-          <i class="fa-solid fa-masks-theater"></i>
+          🖌️
         </div>
 
-        <h3>Drama Competition</h3>
+        <h3>
+          Painting
+        </h3>
 
         <p>
-          Value-based theatrical performances.
+          Classes 5 - 10
         </p>
 
         <div class="card-buttons">
 
-          <button class="guideline-btn"
-            onclick="openModal('dramaModal')">
+          <button
+            class="guideline-btn"
+            onclick="openModal('paintingGuidelines')">
             Guidelines
           </button>
 
-          <button class="register-btn"
-            onclick="scrollToForm('Drama Competition')">
+          <button
+            class="gallery-btn"
+            onclick="openGallery('painting')">
+            Gallery
+          </button>
+
+          <button
+            class="register-btn"
+            onclick="scrollToForm('Painting')">
             Register
           </button>
 
@@ -119,28 +239,39 @@
       </div>
 
 
-      <!-- SLOKA -->
+      <!-- Puranic Costumes -->
+
       <div class="category-card">
 
         <div class="category-icon">
-          <i class="fa-solid fa-book-open-reader"></i>
+          👑
         </div>
 
-        <h3>Sloka Competition</h3>
+        <h3>
+          Puranic Costumes
+        </h3>
 
         <p>
-          Bhagavad Gita and sloka recitation events.
+          Classes 1 - 4
         </p>
 
         <div class="card-buttons">
 
-          <button class="guideline-btn"
-            onclick="openModal('slokaModal')">
+          <button
+            class="guideline-btn"
+            onclick="openModal('costumeGuidelines')">
             Guidelines
           </button>
 
-          <button class="register-btn"
-            onclick="scrollToForm('Sloka Competition')">
+          <button
+            class="gallery-btn"
+            onclick="openGallery('costume')">
+            Gallery
+          </button>
+
+          <button
+            class="register-btn"
+            onclick="scrollToForm('Puranic Costumes')">
             Register
           </button>
 
@@ -149,28 +280,39 @@
       </div>
 
 
-      <!-- DRAWING -->
+      <!-- Gita Shloka -->
+
       <div class="category-card">
 
         <div class="category-icon">
-          <i class="fa-solid fa-palette"></i>
+          📖
         </div>
 
-        <h3>Drawing Competition</h3>
+        <h3>
+          Gita Shloka Chanting
+        </h3>
 
         <p>
-          Creative art inspired by spiritual heritage.
+          Classes 1 - 10
         </p>
 
         <div class="card-buttons">
 
-          <button class="guideline-btn"
-            onclick="openModal('drawingModal')">
+          <button
+            class="guideline-btn"
+            onclick="openModal('gitaGuidelines')">
             Guidelines
           </button>
 
-          <button class="register-btn"
-            onclick="scrollToForm('Drawing Competition')">
+          <button
+            class="gallery-btn"
+            onclick="openGallery('gita')">
+            Gallery
+          </button>
+
+          <button
+            class="register-btn"
+            onclick="scrollToForm('Gita Shloka Chanting')">
             Register
           </button>
 
@@ -178,128 +320,345 @@
 
       </div>
 
+
+      <!-- Vocal Music -->
+
+      <div class="category-card">
+
+        <div class="category-icon">
+          🎤
+        </div>
+
+        <h3>
+          Vocal Music
+        </h3>
+
+        <p>
+          Classes 5 - 10
+        </p>
+
+        <div class="card-buttons">
+
+          <button
+            class="guideline-btn"
+            onclick="openModal('musicGuidelines')">
+            Guidelines
+          </button>
+
+          <button
+            class="gallery-btn"
+            onclick="openGallery('music')">
+            Gallery
+          </button>
+
+          <button
+            class="register-btn"
+            onclick="scrollToForm('Vocal Music')">
+            Register
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- Drama -->
+
+      <div class="category-card">
+
+        <div class="category-icon">
+          🎭
+        </div>
+
+        <h3>
+          Drama
+        </h3>
+
+        <p>
+          Classes 5 - 10
+        </p>
+
+        <div class="card-buttons">
+
+          <button
+            class="guideline-btn"
+            onclick="openModal('dramaGuidelines')">
+            Guidelines
+          </button>
+
+          <button
+            class="gallery-btn"
+            onclick="openGallery('drama')">
+            Gallery
+          </button>
+
+          <button
+            class="register-btn"
+            onclick="scrollToForm('Drama')">
+            Register
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- Pottery -->
+
+      <div class="category-card">
+
+        <div class="category-icon">
+          🏺
+        </div>
+
+        <h3>
+          Pottery Painting
+        </h3>
+
+        <p>
+          Classes 5 - 10
+        </p>
+
+        <div class="card-buttons">
+
+          <button
+            class="guideline-btn"
+            onclick="openModal('potteryGuidelines')">
+            Guidelines
+          </button>
+
+          <button
+            class="gallery-btn"
+            onclick="openGallery('pottery')">
+            Gallery
+          </button>
+
+          <button
+            class="register-btn"
+            onclick="scrollToForm('Pottery Painting')">
+            Register
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- Paper Craft -->
+
+      <div class="category-card">
+
+        <div class="category-icon">
+          ✂️
+        </div>
+
+        <h3>
+          Paper Craft Work
+        </h3>
+
+        <p>
+          Classes 5 - 10
+        </p>
+
+        <div class="card-buttons">
+
+          <button
+            class="guideline-btn"
+            onclick="openModal('paperGuidelines')">
+            Guidelines
+          </button>
+
+          <button
+            class="gallery-btn"
+            onclick="openGallery('paper')">
+            Gallery
+          </button>
+
+          <button
+            class="register-btn"
+            onclick="scrollToForm('Paper Craft Work')">
+            Register
+          </button>
+
+        </div>
+
+      </div>
 
     </div>
 
   </section>
 
 
-  <!-- REGISTRATION FORM -->
-  <section class="registration-section" id="registrationFormSection">
+  <!-- =========================
+       REGISTRATION SECTION
+  ========================== -->
+
+  <section id="registrationSection"
+    class="registration-section">
 
     <div class="section-title">
-      <h2>Registration Form</h2>
-      <div class="underline"></div>
-    </div>
 
+      <h2>
+        Registration Form
+      </h2>
+
+      <div class="underline"></div>
+
+    </div>
 
     <div class="form-container">
 
-      <form id="registrationForm">
+      <!-- School Details -->
+
+      <div class="form-block">
+
+        <h3>
+          School Details
+        </h3>
 
         <div class="form-grid">
 
+          <div>
+            <label>Selected Category</label>
 
-          <div class="input-group">
-            <label>Student Name *</label>
-            <input type="text"
-              id="studentName"
-              required>
-          </div>
-
-
-          <div class="input-group">
-            <label>Age *</label>
-            <input type="number"
-              id="age"
-              required>
-          </div>
-
-
-          <div class="input-group">
-            <label>Gender *</label>
-
-            <select id="gender" required>
-              <option value="">Select Gender</option>
-              <option>Male</option>
-              <option>Female</option>
+            <select id="categorySelect">
             </select>
-
           </div>
 
-
-          <div class="input-group">
-            <label>Mobile *</label>
-            <input type="text"
-              id="mobile"
-              required>
-          </div>
-
-
-          <div class="input-group">
-            <label>Email *</label>
-            <input type="email"
-              id="email"
-              required>
-          </div>
-
-
-          <div class="input-group">
-            <label>School / College *</label>
-            <input type="text"
-              id="school"
-              required>
-          </div>
-
-
-          <div class="input-group">
-            <label>City *</label>
-            <input type="text"
-              id="city"
-              required>
-          </div>
-
-
-          <div class="input-group">
-            <label>Selected Event *</label>
-            <input type="text"
-              id="eventName"
+          <div>
+            <label>Eligible Classes</label>
+            <input
+              type="text"
+              id="eligibleClasses"
               readonly>
           </div>
 
+          <div>
+            <label>School Name</label>
+            <input
+              type="text"
+              id="schoolName">
+          </div>
+
+          <div>
+            <label>School Email</label>
+            <input
+              type="email"
+              id="schoolEmail">
+          </div>
+
+          <div>
+            <label>Coordinator Name</label>
+            <input
+              type="text"
+              id="coordinatorName">
+          </div>
+
+          <div>
+            <label>Coordinator Mobile</label>
+            <input
+              type="text"
+              id="coordinatorMobile">
+          </div>
 
         </div>
 
+      </div>
 
-        <div class="submit-area">
 
-          <button type="submit"
-            class="submit-btn"
-            id="submitBtn">
-            Submit Registration
-          </button>
+      <!-- Student Container -->
 
-        </div>
+      <div id="studentsContainer">
 
-      </form>
+      </div>
+
+
+      <div class="action-buttons">
+
+        <button
+          type="button"
+          class="add-btn"
+          onclick="addStudentBlock()">
+
+          + Add One More Student
+
+        </button>
+
+        <button
+          type="button"
+          class="submit-btn"
+          onclick="submitRegistration()">
+
+          Submit Registration
+
+        </button>
+
+      </div>
 
     </div>
 
   </section>
 
 
-  <!-- SUCCESS BOX -->
-  <div class="success-popup" id="successPopup">
+  <!-- Gallery Modal -->
+
+  <div id="galleryModal"
+    class="modal">
+
+    <div class="gallery-content">
+
+      <span
+        class="close-btn"
+        onclick="closeGallery()">
+        &times;
+      </span>
+
+      <img
+        id="galleryImage"
+        src=""
+        alt="Gallery">
+
+      <div class="gallery-nav">
+
+        <button onclick="previousImage()">
+          Previous
+        </button>
+
+        <button onclick="nextImage()">
+          Next
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- Guidelines Modals -->
+  <!-- Will be connected through script.js -->
+
+  <div id="guidelineContainer"></div>
+
+
+  <!-- Success Popup -->
+
+  <div id="successPopup"
+    class="success-popup">
 
     <div class="success-content">
 
       <i class="fa-solid fa-circle-check"></i>
 
-      <h2>Registration Successful</h2>
+      <h2>
+        Registration Successful
+      </h2>
 
-      <p id="successMessage"></p>
+      <p id="successMessage">
+      </p>
 
-      <button onclick="closeSuccessPopup()">
+      <button
+        onclick="closeSuccessPopup()">
         Close
       </button>
 
@@ -308,108 +667,41 @@
   </div>
 
 
-  <!-- MUSIC MODAL -->
-  <div class="modal" id="musicModal">
+  <!-- Footer -->
 
-    <div class="modal-content">
-
-      <span class="close-btn"
-        onclick="closeModal('musicModal')">
-        &times;
-      </span>
-
-      <h2>Music Competition Guidelines</h2>
-
-      <ul>
-        <li>Only devotional songs allowed.</li>
-        <li>Time limit is 5 minutes.</li>
-        <li>Participants should report early.</li>
-      </ul>
-
-    </div>
-
-  </div>
-
-
-  <!-- DRAMA MODAL -->
-  <div class="modal" id="dramaModal">
-
-    <div class="modal-content">
-
-      <span class="close-btn"
-        onclick="closeModal('dramaModal')">
-        &times;
-      </span>
-
-      <h2>Drama Competition Guidelines</h2>
-
-      <ul>
-        <li>Maximum 10 participants.</li>
-        <li>15 minute time limit.</li>
-        <li>Content must be value-based.</li>
-      </ul>
-
-    </div>
-
-  </div>
-
-
-  <!-- SLOKA MODAL -->
-  <div class="modal" id="slokaModal">
-
-    <div class="modal-content">
-
-      <span class="close-btn"
-        onclick="closeModal('slokaModal')">
-        &times;
-      </span>
-
-      <h2>Sloka Competition Guidelines</h2>
-
-      <ul>
-        <li>Memorization mandatory.</li>
-        <li>Clear pronunciation required.</li>
-      </ul>
-
-    </div>
-
-  </div>
-
-
-  <!-- DRAWING MODAL -->
-  <div class="modal" id="drawingModal">
-
-    <div class="modal-content">
-
-      <span class="close-btn"
-        onclick="closeModal('drawingModal')">
-        &times;
-      </span>
-
-      <h2>Drawing Competition Guidelines</h2>
-
-      <ul>
-        <li>Bring your own colors.</li>
-        <li>Theme announced on spot.</li>
-      </ul>
-
-    </div>
-
-  </div>
-
-
-  <!-- FOOTER -->
   <footer>
-    <p>© 2026 Heritage Fest</p>
+
+    <img
+      src="images/HKM logo.jpg"
+      class="footer-logo"
+      alt="HKM">
+
+    <h3>
+      Hare Krishna Vaikuntham Cultural Centre
+    </h3>
+
+    <p>
+      IIM Road, Gambhiram,
+      Visakhapatnam
+    </p>
+
+    <p>
+      Phone: +91 9876543210
+    </p>
+
+    <p>
+      Email: heritagefest@example.com
+    </p>
+
+    <p class="copyright">
+      © Heritage Fest 2026
+    </p>
+
   </footer>
 
 
-  <!-- JAVASCRIPT -->
   <script src="script.js"></script>
 
 </body>
 
 </html>
-```
-
-this index.html

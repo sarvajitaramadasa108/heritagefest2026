@@ -727,3 +727,335 @@ window.onclick = function(event){
     });
 
 };
+
+/* ==========================
+   FORM SUBMISSION
+========================== */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function(){
+
+    const form =
+      document.getElementById(
+        "registrationForm"
+      );
+
+    if(form){
+
+      form.addEventListener(
+        "submit",
+        submitRegistration
+      );
+
+    }
+
+  }
+);
+
+
+/* ==========================
+   COLLECT STUDENTS
+========================== */
+
+function collectStudents(){
+
+  const students = [];
+
+  const cards =
+    document.querySelectorAll(
+      ".student-card"
+    );
+
+  cards.forEach(card => {
+
+    const name =
+      card.querySelector(
+        ".student-name"
+      ).value.trim();
+
+    const gender =
+      card.querySelector(
+        ".student-gender"
+      ).value;
+
+    const studentClass =
+      card.querySelector(
+        ".student-class"
+      ).value;
+
+    if(name !== ""){
+
+      students.push({
+
+        name:name,
+        gender:gender,
+        class:studentClass
+
+      });
+
+    }
+
+  });
+
+  return students;
+
+}
+
+
+/* ==========================
+   SUBMIT REGISTRATION
+========================== */
+
+async function submitRegistration(e){
+
+  e.preventDefault();
+
+  const submitBtn =
+    document.getElementById(
+      "submitBtn"
+    );
+
+  const category =
+    document.getElementById(
+      "categorySelect"
+    ).value;
+
+  const schoolName =
+    document.getElementById(
+      "schoolName"
+    ).value.trim();
+
+  const schoolEmail =
+    document.getElementById(
+      "schoolEmail"
+    ).value.trim();
+
+  const coordinatorName =
+    document.getElementById(
+      "coordinatorName"
+    ).value.trim();
+
+  const coordinatorMobile =
+    document.getElementById(
+      "coordinatorMobile"
+    ).value.trim();
+
+  const students =
+    collectStudents();
+
+  if(!category){
+
+    alert(
+      "Please select category"
+    );
+
+    return;
+  }
+
+  if(students.length === 0){
+
+    alert(
+      "Add at least one student"
+    );
+
+    return;
+  }
+
+  submitBtn.disabled = true;
+
+  submitBtn.innerHTML =
+    "Submitting...";
+
+  const payload = {
+
+    category:category,
+
+    schoolName:schoolName,
+
+    schoolEmail:schoolEmail,
+
+    coordinatorName:
+      coordinatorName,
+
+    coordinatorMobile:
+      coordinatorMobile,
+
+    students:students
+
+  };
+
+  try{
+
+    const response =
+      await fetch(
+        WEB_APP_URL,
+        {
+          method:"POST",
+          body:JSON.stringify(
+            payload
+          )
+        }
+      );
+
+    const result =
+      await response.json();
+
+    if(result.status === "success"){
+
+      let html = `
+      <strong>
+      Registration Successful
+      </strong>
+      <br><br>
+
+      Category:
+      ${category}
+
+      <br><br>
+
+      Students Registered:
+      ${students.length}
+
+      <br><br>
+
+      Registration IDs:
+      <br><br>
+      `;
+
+      result.registrationIds
+      .forEach(id => {
+
+        html +=
+        id + "<br>";
+
+      });
+
+      showSuccess(html);
+
+      document
+        .getElementById(
+          "registrationForm"
+        )
+        .reset();
+
+      document
+        .getElementById(
+          "studentsContainer"
+        )
+        .innerHTML = "";
+
+      studentCount = 0;
+
+      addStudentBlock();
+
+    }
+
+    else{
+
+      alert(
+        result.message
+      );
+
+    }
+
+  }
+
+  catch(error){
+
+    alert(
+      "Submission Failed"
+    );
+
+    console.error(error);
+
+  }
+
+  submitBtn.disabled = false;
+
+  submitBtn.innerHTML =
+    "Submit Registration";
+
+}
+
+
+/* ==========================
+   AUTO OPEN CATEGORY
+========================== */
+
+function openCategoryRegistration(
+  category
+){
+
+  scrollToForm(category);
+
+}
+
+
+/* ==========================
+   CATEGORY BUTTON HELPERS
+========================== */
+
+function registerColoring(){
+
+  openCategoryRegistration(
+    "Coloring"
+  );
+
+}
+
+function registerPainting(){
+
+  openCategoryRegistration(
+    "Painting"
+  );
+
+}
+
+function registerCostumes(){
+
+  openCategoryRegistration(
+    "Puranic Costumes"
+  );
+
+}
+
+function registerGita(){
+
+  openCategoryRegistration(
+    "Gita Shloka Chanting"
+  );
+
+}
+
+function registerMusic(){
+
+  openCategoryRegistration(
+    "Vocal Music"
+  );
+
+}
+
+function registerDrama(){
+
+  openCategoryRegistration(
+    "Drama"
+  );
+
+}
+
+function registerPottery(){
+
+  openCategoryRegistration(
+    "Pottery Painting"
+  );
+
+}
+
+function registerPaper(){
+
+  openCategoryRegistration(
+    "Paper Craft Work"
+  );
+
+}
